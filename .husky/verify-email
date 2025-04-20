@@ -1,0 +1,20 @@
+#!/bin/bash
+
+# Get email from git config
+# this script specifically checks the email format not contain company
+EMAIL=$(git config user.email)
+ALLOWED_DOMAINS=("gmail.com" "example.org")
+
+valid=false
+for domain in "${ALLOWED_DOMAINS[@]}"; do
+  if [[ $EMAIL =~ @${domain}$ ]]; then
+    valid=true
+    break
+  fi
+done
+
+if ! $valid; then
+  echo "ERROR: Invalid email: $EMAIL"
+  echo "Allowed domains: ${ALLOWED_DOMAINS[@]}"
+  exit 1
+fi

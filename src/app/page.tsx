@@ -12,6 +12,13 @@ export default function Home() {
           height={38}
           priority
         />
+        <Image
+          src="https://images.pexels.com/photos/29902414/pexels-photo-29902414/free-photo-of-calm-ocean-view-with-gentle-clouds-at-dusk.jpeg"
+          alt="Ocean view with clouds at dusk"
+          width={200}
+          height={200}
+          unoptimized={true} // not using the Next.js Image component to optimize the image
+        />
         <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
           <li className="mb-2 tracking-[-.01em]">
             Get started by editing{' '}
